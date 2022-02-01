@@ -6,7 +6,7 @@ namespace ScrapingTitles
     {
         static void Main(string[] args)
         {
-            Scrape.Titles().ForEach(title => Console.WriteLine(title));
+            Scrape.GetTitles();
         }
     }
 }

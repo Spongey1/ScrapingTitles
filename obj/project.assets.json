@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "CsvHelper/27.1.1": {
+      "CsvHelper/27.2.1": {
         "type": "package",
         "compile": {
           "lib/net5.0/CsvHelper.dll": {}
@@ -23,15 +23,15 @@
     }
   },
   "libraries": {
-    "CsvHelper/27.1.1": {
-      "sha512": "lo5yypClBORR2XiWPRxQApaA4C2R4GVCIPVRt9HfaLxLmVQtg/KZiOYsd4luLgyOxkUatF9R0QdFQYk7Y2l0cw==",
+    "CsvHelper/27.2.1": {
+      "sha512": "uS5ix5hL9gL5taiAG//CScyJa8Fn1ZOh3FDhDvf4laboESFs84mCNropfp7PIt8xCkyQofljFpqu1B5UnSXjyA==",
       "type": "package",
-      "path": "csvhelper/27.1.1",
+      "path": "csvhelper/27.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "csvhelper.27.1.1.nupkg.sha512",
+        "csvhelper.27.2.1.nupkg.sha512",
         "csvhelper.nuspec",
         "lib/net45/CsvHelper.dll",
         "lib/net45/CsvHelper.xml",
@@ -39,6 +39,8 @@
         "lib/net47/CsvHelper.xml",
         "lib/net5.0/CsvHelper.dll",
         "lib/net5.0/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
         "lib/netstandard2.0/CsvHelper.dll",
         "lib/netstandard2.0/CsvHelper.xml",
         "lib/netstandard2.1/CsvHelper.dll",
@@ -96,7 +98,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "CsvHelper >= 27.1.1",
+      "CsvHelper >= 27.2.1",
       "HtmlAgilityPack >= 1.11.37"
     ]
   },
@@ -141,7 +143,7 @@
         "dependencies": {
           "CsvHelper": {
             "target": "Package",
-            "version": "[27.1.1, )"
+            "version": "[27.2.1, )"
           },
           "HtmlAgilityPack": {
             "target": "Package",
@@ -158,12 +160,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.13, 5.0.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

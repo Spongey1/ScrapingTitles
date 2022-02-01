@@ -3,40 +3,52 @@ using System.Globalization;
 using System.IO;
 using CsvHelper;
 using HtmlAgilityPack;
+using System.Net;
+using System.Text.RegularExpressions;
+using System;
 
 namespace ScrapingTitles
 {
     public class Scrape
     {
-        public static List<Row> Titles()
+        public static void GetTitles()
         {
             HtmlWeb web = new HtmlWeb();
-            HtmlDocument doc = web.Load("https://animedao.to/");
+            HtmlDocument doc = web.Load("https://myanimelist.net/character.php"); // gets website
 
-            var animeTitles = new List<Row>();
+            var characterList = new List<Card>();
 
-            var Titles = doc.DocumentNode.SelectNodes("//div[@class='latestanime-title']");
+            var animeNames = doc.DocumentNode.SelectNodes("//*[@class='fs14 fw-b']"); // scrapes via the xPath
 
-            foreach (var t in Titles)
+            for (int i = 0; i < animeNames.Count; i++)
             {
-                foreach (var ft in File.ReadAllLines(@".\fixedTitles.txt"))
-                {
-                    if (t.InnerText.ToLower().Contains(ft))
-                    {
-                        animeTitles.Add(new Row { Title = t.InnerText });
-                    }
-                }
+                string fname, lname, fullName;
+
+                fname = Regex.Replace(animeNames[i].InnerText, @"^([^\s]+)\s+", ""); // removes last word
+                lname = Regex.Replace(animeNames[i].InnerText, "\\w+$", ""); // removes first word
+
+                fullName = fname + " " + lname;
+
+                characterList.Add(new Card(i, fullName.Replace(",", "")));
+
+                //GetImages($"https://www.google.com/search?q=site%3A+{name}");
             }
 
             using (var writer = new StreamWriter(@".\Titles.txt"))
             {
                 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                 {
-                    csv.WriteRecords(animeTitles);
+                    csv.WriteRecords(animeNames);
                 }
             }
+        }
 
-            return animeTitles;
+        public static void GetImages(string url)
+        {
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadFile(new Uri(url), @"C:\Users\drit0046\VSCode\ScrapingTitles\characterPics");
+            }
         }
     }
 }

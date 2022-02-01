@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "DCo+dOvXAD8lS1OMJQ4mDzvvCohb03wGwstRkbjhiJgEmPbnQp4eP/vn+O9tuSmmqo77F0wsLR/smv9cvM0wvg==",
+  "dgSpecHash": "eUdQzx442B+k8zQuvchHBoOC/5Bh9qLVpR1m0CgWGcbc5Wdu9XIy7CwAYVJEqmeuusTxW0IF8id8JQ1pp6DorQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\drit0046\\VSCode\\ScrapingTitles\\ScrapingTitles.csproj",
+  "projectFilePath": "C:\\Users\\drit0046\\VSCode\\ScrapingTitles\\ScrapingTitles.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\drit0046\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
-    "C:\\Users\\drit0046\\.nuget\\packages\\htmlagilitypack\\1.11.37\\htmlagilitypack.1.11.37.nupkg.sha512"
+    "C:\\Users\\drit0046\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\drit0046\\.nuget\\packages\\htmlagilitypack\\1.11.37\\htmlagilitypack.1.11.37.nupkg.sha512",
+    "C:\\Users\\drit0046\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }
